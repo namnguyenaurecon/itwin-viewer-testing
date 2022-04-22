@@ -8,10 +8,10 @@ Prior to running the app, you will need to add OIDC client configuration to the 
 
 ```
 # ---- Authorization Client Settings ----
-IMJS_AUTH_CLIENT_CLIENT_ID=""
-IMJS_AUTH_CLIENT_REDIRECT_URI=""
-IMJS_AUTH_CLIENT_LOGOUT_URI=""
-IMJS_AUTH_CLIENT_SCOPES =""
+REACT_APP_AUTH_CLIENT_CLIENT_ID=""
+REACT_APP_AUTH_CLIENT_REDIRECT_URI=""
+REACT_APP_AUTH_CLIENT_LOGOUT_URI=""
+REACT_APP_AUTH_CLIENT_SCOPES =""
 ```
 
 - You can generate a [test client](https://developer.bentley.com/tutorials/web-application-quick-start/#2-register-an-application) to get started.
@@ -22,13 +22,13 @@ You should also add a valid iTwinId and iModelId for your user in the this file:
 
 ```
 # ---- Test ids ----
-IMJS_ITWIN_ID = ""
-IMJS_IMODEL_ID = ""
+REACT_APP_ITWIN_ID = ""
+REACT_APP_IMODEL_ID = ""
 ```
 
-- For the IMJS_ITWIN_ID variable, you can use the id of one of your existing Projects or Assets. You can obtain their ids via the [Administration REST APIs](https://developer.bentley.com/api-groups/administration/api-reference/).
+- For the REACT_APP_ITWIN_ID variable, you can use the id of one of your existing Projects or Assets. You can obtain their ids via the [Administration REST APIs](https://developer.bentley.com/api-groups/administration/api-reference/).
 
-- For the IMJS_IMODEL_ID variable, use the id of an iModel that belongs to the iTwin that you specified in the IMJS_ITWIN_ID variable. You can obtain iModel ids via the [Data Management REST APIs](https://developer.bentley.com/api-groups/data-management/apis/imodels/operations/get-project-or-asset-imodels/).
+- For the REACT_APP_IMODEL_ID variable, use the id of an iModel that belongs to the iTwin that you specified in the REACT_APP_ITWIN_ID variable. You can obtain iModel ids via the [Data Management REST APIs](https://developer.bentley.com/api-groups/data-management/apis/imodels/operations/get-project-or-asset-imodels/).
 
 - Alternatively, you can [generate a test iModel](https://developer.bentley.com/tutorials/web-application-quick-start/#3-create-an-imodel) to get started without an existing iModel.
 

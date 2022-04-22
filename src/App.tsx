@@ -20,20 +20,20 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { history } from "./history";
 
 const App: React.FC = () => {
-  const [iModelId, setIModelId] = useState(process.env.IMJS_IMODEL_ID);
-  const [iTwinId, setITwinId] = useState(process.env.IMJS_ITWIN_ID);
+  const [iModelId, setIModelId] = useState(process.env.REACT_APP_IMODEL_ID);
+  const [iTwinId, setITwinId] = useState(process.env.REACT_APP_ITWIN_ID);
 
   const accessToken = useAccessToken();
 
   const authClient = useMemo(
     () =>
       new BrowserAuthorizationClient({
-        scope: process.env.IMJS_AUTH_CLIENT_SCOPES ?? "",
-        clientId: process.env.IMJS_AUTH_CLIENT_CLIENT_ID ?? "",
-        redirectUri: process.env.IMJS_AUTH_CLIENT_REDIRECT_URI ?? "",
-        postSignoutRedirectUri: process.env.IMJS_AUTH_CLIENT_LOGOUT_URI,
+        scope: process.env.REACT_APP_AUTH_CLIENT_SCOPES ?? "",
+        clientId: process.env.REACT_APP_AUTH_CLIENT_CLIENT_ID ?? "",
+        redirectUri: process.env.REACT_APP_AUTH_CLIENT_REDIRECT_URI ?? "",
+        postSignoutRedirectUri: process.env.REACT_APP_AUTH_CLIENT_LOGOUT_URI,
         responseType: "code",
-        authority: process.env.IMJS_AUTH_AUTHORITY,
+        authority: process.env.REACT_APP_AUTH_AUTHORITY,
       }),
     []
   );
@@ -56,7 +56,7 @@ const App: React.FC = () => {
       if (urlParams.has("iTwinId")) {
         setITwinId(urlParams.get("iTwinId") as string);
       } else {
-        if (!process.env.IMJS_ITWIN_ID) {
+        if (!process.env.REACT_APP_ITWIN_ID) {
           throw new Error(
             "Please add a valid iTwin ID in the .env file and restart the application or add it to the iTwinId query parameter in the url and refresh the page. See the README for more information."
           );
@@ -66,7 +66,7 @@ const App: React.FC = () => {
       if (urlParams.has("iModelId")) {
         setIModelId(urlParams.get("iModelId") as string);
       } else {
-        if (!process.env.IMJS_IMODEL_ID) {
+        if (!process.env.REACT_APP_IMODEL_ID) {
           throw new Error(
             "Please add a valid iModel ID in the .env file and restart the application or add it to the iModelId query parameter in the url and refresh the page. See the README for more information."
           );
